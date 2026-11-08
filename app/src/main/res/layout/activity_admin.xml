@@ -1,0 +1,550 @@
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshAdminDashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/bg_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvAdminGreeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Xin chào, Quản Trị Viên"
+                        android:textColor="@color/gold_primary_dark"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Bảng điều khiển kinh doanh trang sức"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btnAdminLogout"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_logout"
+                    app:tint="@color/stock_out"
+                    android:contentDescription="@string/logout" />
+            </LinearLayout>
+
+        <!-- Revenue Banner Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/transparent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gold_gradient"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TỔNG DOANH THU THỰC TẾ"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05" />
+
+                    <TextView
+                        android:id="@+id/tvAdminRevenue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        tools:text="38.500.000 đ" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="*Tính trên các đơn hàng đã giao thành công"
+                        android:textColor="#F3E5AB"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Low Stock Alert Banner -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardStockAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/stock_low"
+            app:strokeWidth="1dp"
+            app:cardBackgroundColor="#FFF3E0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_ring"
+                    app:tint="@color/stock_low"
+                    android:contentDescription="Cảnh báo kho" />
+
+                <TextView
+                    android:id="@+id/tvStockAlertMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#B74B00"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="Có 3 sản phẩm sắp hết hàng cần nhập kho!" />
+
+                <TextView
+                    android:id="@+id/tvStockAlertAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xem ngay"
+                    android:textColor="@color/stock_low"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Metric Grid (2x2) -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <!-- Products Count -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/border_gold"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_diamond"
+                        app:tint="@color/gold_primary"
+                        android:contentDescription="@string/total_products" />
+
+                    <TextView
+                        android:id="@+id/tvCountProducts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sản Phẩm"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Orders Count -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/border_gold"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_orders"
+                        app:tint="@color/gold_primary"
+                        android:contentDescription="@string/total_orders" />
+
+                    <TextView
+                        android:id="@+id/tvCountOrders"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đơn Hàng"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Categories Count -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/border_gold"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_category"
+                        app:tint="@color/gold_primary"
+                        android:contentDescription="@string/total_categories" />
+
+                    <TextView
+                        android:id="@+id/tvCountCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="6" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Danh Mục"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Customers Count -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/border_gold"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_user"
+                        app:tint="@color/gold_primary"
+                        android:contentDescription="@string/total_customers" />
+
+                    <TextView
+                        android:id="@+id/tvCountCustomers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Khách Hàng"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </GridLayout>
+
+        <!-- Section: Menu Quản Trị -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="DANH MỤC QUẢN LÝ"
+            android:textColor="@color/gold_primary_dark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05" />
+
+        <!-- 1. Manage Products Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavManageProducts"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Quản Lý Sản Phẩm &amp; Tồn Kho"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_diamond"
+            app:iconPadding="14dp"
+            app:iconTint="@color/gold_primary"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 2. Manage Categories Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavManageCategories"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Quản Lý Danh Mục Trang Sức"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_category"
+            app:iconPadding="14dp"
+            app:iconTint="@color/gold_primary"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 3. Manage Orders Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavManageOrders"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Quản Lý Đơn Hàng &amp; Vận Chuyển"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_orders"
+            app:iconPadding="14dp"
+            app:iconTint="@color/gold_primary"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 4. Manage Customers Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavManageCustomers"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Quản Lý Khách Hàng Đăng Ký"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_user"
+            app:iconPadding="14dp"
+            app:iconTint="@color/gold_primary"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 5. Statistics Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavStatistics"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Thống Kê Doanh Thu &amp; Báo Cáo"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_analytics"
+            app:iconPadding="14dp"
+            app:iconTint="@color/gold_primary"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 6. Manage Promotions -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavManagePromotions"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Quản Lý Khuyến Mãi &amp; Sự Kiện"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_discount"
+            app:iconPadding="14dp"
+            app:iconTint="@color/gold_primary"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 7. Manage Coupons -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavManageCoupons"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Quản Lý Mã Giảm Giá (Coupon)"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_discount"
+            app:iconPadding="14dp"
+            app:iconTint="@color/gold_primary"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 8. Manage Reviews -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavManageReviews"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Kiểm Duyệt Đánh Giá Sản Phẩm"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_star_filled"
+            app:iconPadding="14dp"
+            app:iconTint="@color/rating_star"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 9. Export Report -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavExportReport"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Xuất Báo Cáo PDF / Excel"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_report"
+            app:iconPadding="14dp"
+            app:iconTint="@color/gold_primary"
+            app:strokeColor="@color/border_gold" />
+
+        <!-- 10. Reset Sample Data Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResetSampleData"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="28dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:text="Khôi Phục Dữ Liệu Mẫu Mặc Định"
+            android:textColor="@color/stock_out"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_refresh"
+            app:iconPadding="14dp"
+            app:iconTint="@color/stock_out"
+            app:strokeColor="@color/stock_out" />
+
+    </LinearLayout>
+</ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

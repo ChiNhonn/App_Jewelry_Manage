@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Jewelry Management</string>
+    <string name="slogan">Đẳng Cấp Trang Sức Sang Trọng</string>
+    
+    <!-- Auth -->
+    <string name="admin_login">Đăng nhập Quản Trị Viên</string>
+    <string name="customer_login">Đăng nhập Khách Hàng</string>
+    <string name="register_title">Đăng Ký Khách Hàng</string>
+    <string name="username">Tên đăng nhập</string>
+    <string name="password">Mật khẩu</string>
+    <string name="confirm_password">Xác nhận mật khẩu</string>
+    <string name="full_name">Họ và tên</string>
+    <string name="email">Email</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="address">Địa chỉ giao hàng</string>
+    <string name="login">Đăng Nhập</string>
+    <string name="register">Đăng Ký</string>
+    <string name="logout">Đăng Xuất</string>
+    <string name="logout_confirm">Bạn có chắc chắn muốn đăng xuất?</string>
+    <string name="dont_have_account">Chưa có tài khoản? Đăng ký ngay</string>
+    <string name="already_have_account">Đã có tài khoản? Đăng nhập ngay</string>
+
+    <!-- Admin Dashboard -->
+    <string name="admin_dashboard">Quản Trị Hệ Thống</string>
+    <string name="total_revenue">Tổng Doanh Thu</string>
+    <string name="total_products">Sản Phẩm</string>
+    <string name="total_categories">Danh Mục</string>
+    <string name="total_customers">Khách Hàng</string>
+    <string name="total_orders">Đơn Hàng</string>
+    <string name="manage_products">Quản Lý Sản Phẩm</string>
+    <string name="manage_categories">Quản Lý Danh Mục</string>
+    <string name="manage_orders">Quản Lý Đơn Hàng</string>
+    <string name="manage_customers">Quản Lý Khách Hàng</string>
+    <string name="statistics_reports">Thống Kê &amp; Báo Cáo</string>
+
+    <!-- Product -->
+    <string name="product_name">Tên sản phẩm</string>
+    <string name="product_price">Giá bán (VNĐ)</string>
+    <string name="product_stock">Số lượng tồn kho</string>
+    <string name="product_category">Danh mục</string>
+    <string name="product_material">Chất liệu</string>
+    <string name="product_weight">Trọng lượng (chỉ / gram)</string>
+    <string name="product_description">Mô tả sản phẩm</string>
+    <string name="add_product">Thêm Sản Phẩm Mới</string>
+    <string name="edit_product">Chỉnh Sửa Sản Phẩm</string>
+    <string name="delete_product">Xóa Sản Phẩm</string>
+    <string name="search_product_hint">Tìm kiếm trang sức theo tên...</string>
+
+    <!-- Order Status -->
+    <string name="status_pending">Chờ xác nhận</string>
+    <string name="status_confirmed">Đã xác nhận</string>
+    <string name="status_shipping">Đang giao hàng</string>
+    <string name="status_delivered">Đã giao hàng</string>
+    <string name="status_cancelled">Đã hủy</string>
+
+    <!-- Customer Shop -->
+    <string name="shop_title">JEWELRY STORE</string>
+    <string name="featured_products">Sản Phẩm Nổi Bật</string>
+    <string name="all_products">Tất Cả Sản Phẩm</string>
+    <string name="categories">Danh Mục Trang Sức</string>
+    <string name="add_to_cart">Thêm Vào Giỏ Hàng</string>
+    <string name="buy_now">Mua Ngay</string>
+    <string name="cart_title">Giỏ Hàng Của Bạn</string>
+    <string name="cart_empty">Giỏ hàng của bạn đang trống</string>
+    <string name="checkout">Tiến Hành Đặt Hàng</string>
+    <string name="order_history">Lịch Sử Đơn Hàng</string>
+    <string name="my_account">Tài Khoản Của Tôi</string>
+    <string name="cancel_order">Hủy Đơn Hàng</string>
+
+    <!-- Common -->
+    <string name="confirm">Xác Nhận</string>
+    <string name="cancel">Hủy</string>
+    <string name="save">Lưu</string>
+    <string name="delete">Xóa</string>
+    <string name="edit">Sửa</string>
+    <string name="detail">Chi Tiết</string>
+</resources>

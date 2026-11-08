@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".JewelryApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.JewelryManagement"
+        tools:targetApi="31">
+
+        <!-- Auth Activities -->
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.VerifyOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ResetPasswordActivity"
+            android:exported="false" />
+
+        <!-- Admin Activities -->
+        <activity
+            android:name=".activities.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ManageProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AddEditProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ManageCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ManageOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ManageCustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.StatisticsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ManagePromotionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AddEditPromotionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ManageCouponActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AddEditCouponActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ManageReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ExportReportActivity"
+            android:exported="false" />
+
+        <!-- Customer Activities (the shop is the launcher; guests can browse without logging in) -->
+        <activity
+            android:name=".activities.CustomerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CheckoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.VnPayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.OrderDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.OrderHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CustomerProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ReviewProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FavoriteProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CompareProductsActivity"
+            android:exported="false" />
+
+        <!-- FileProvider for Sharing Reports (PDF & Excel) -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

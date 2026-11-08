@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/btnBackVerifyOtp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="start"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            app:tint="@color/gold_primary"
+            android:contentDescription="Quay lại" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_notification"
+            app:tint="@color/gold_primary"
+            android:contentDescription="OTP" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Nhập Mã OTP"
+            android:textColor="@color/gold_primary_dark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvOtpEmailHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Mã OTP đã gửi tới email của bạn"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvOtpCountdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Mã còn hiệu lực: --:--"
+            android:textColor="@color/gold_primary_dark"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilOtpCode"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="Mã OTP (6 chữ số)"
+            app:boxStrokeColor="@color/gold_primary"
+            app:hintTextColor="@color/gold_primary"
+            app:counterEnabled="true"
+            app:counterMaxLength="6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtpCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="6"
+                android:letterSpacing="0.3"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:imeOptions="actionDone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVerifyOtp"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="Xác Minh OTP"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/gold_primary"
+            app:cornerRadius="12dp" />
+
+        <ProgressBar
+            android:id="@+id/progressVerifyOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResendOtp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:text="Gửi lại OTP"
+            android:textSize="13sp"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/gold_primary"
+            android:enabled="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Mã OTP có hiệu lực trong 5 phút.\nTối đa 5 lần nhập sai. Không chia sẻ mã cho bất kỳ ai."
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+</ScrollView>
